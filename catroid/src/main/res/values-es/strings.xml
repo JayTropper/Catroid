@@ -515,6 +515,8 @@
         <item quantity="one">Proyecto importado %d.</item>
         <item quantity="other">Proyectos importados %d.</item>
     </plurals>
+    <!-- Renamed -->
+    <string name="renamed_project">Renamed project</string>
     <!--  -->
     <!-- ProjectListActivity and ProjectListFragment -->
     <string name="project_list_title">Programas</string>
@@ -526,8 +528,10 @@
     <string name="set_notes_and_credits">Notas y créditos del plató</string>
     <string name="details_date_today">Hoy</string>
     <string name="import_project">Importar proyecto</string>
+    <string name="export_project">Guardar proyecto en almacenamiento externo</string>
     <string name="error_import_project">Algo salió mal al importar los proyectos.</string>
     <string name="no_projects_selected">No hay proyectos seleccionados para la importación</string>
+    <string name="only_select_catrobat_files">Only select project files</string>
     <string name="error_no_files_found">No se han encontrado archivos de proyecto.</string>
     <!-- ProjectOptionsFragment -->
     <string name="project_options_description">Descripción</string>
@@ -1774,6 +1778,10 @@ necesita acceso de lectura y escritura a ella. Siempre puedes cambiar los permis
     <string name="formula_editor_sensor_second_face_size">segundo tamaño de la cara</string>
     <string name="formula_editor_sensor_second_face_x_position">segunda cara x posición</string>
     <string name="formula_editor_sensor_second_face_y_position">posición de la segunda cara y</string>
+    <string name="formula_editor_sensor_head_top_x">head top x</string>
+    <string name="formula_editor_sensor_head_top_y">head top y</string>
+    <string name="formula_editor_sensor_neck_x">neck x</string>
+    <string name="formula_editor_sensor_neck_y">neck y</string>
     <string name="formula_editor_sensor_nose_x">nariz x</string>
     <string name="formula_editor_sensor_nose_y">nariz y</string>
     <string name="formula_editor_sensor_left_eye_inner_x">ojo izquierdo interno x</string>

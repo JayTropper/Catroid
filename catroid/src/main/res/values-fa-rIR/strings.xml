@@ -506,6 +506,8 @@
         <item quantity="one">%d پروژه وارد شد.</item>
         <item quantity="other">%d پروژه وارد شده است.</item>
     </plurals>
+    <!-- Renamed -->
+    <string name="renamed_project">Renamed project</string>
     <!--  -->
     <!-- ProjectListActivity and ProjectListFragment -->
     <string name="project_list_title">برنامه ها</string>
@@ -517,8 +519,10 @@
     <string name="set_notes_and_credits">یادداشت ها و اعتبارات را تنظیم کنید</string>
     <string name="details_date_today">امروز</string>
     <string name="import_project">واردات پروژه</string>
+    <string name="export_project">ذخیره پروژه در حافظه خارجی</string>
     <string name="error_import_project">هنگام وارد کردن پروژه ها مشکلی پیش آمد.</string>
     <string name="no_projects_selected">هیچ پروژه ای برای وارد کردن انتخاب نشده است</string>
+    <string name="only_select_catrobat_files">Only select project files</string>
     <string name="error_no_files_found">هیچ فایل پروژه ای یافت نشد.</string>
     <!-- ProjectOptionsFragment -->
     <string name="project_options_description">توضیح</string>
@@ -1771,6 +1775,10 @@
     <string name="formula_editor_sensor_second_face_size">اندازه صورت دوم</string>
     <string name="formula_editor_sensor_second_face_x_position">موقعیت دوم x موقعیت</string>
     <string name="formula_editor_sensor_second_face_y_position">موقعیت دوم y</string>
+    <string name="formula_editor_sensor_head_top_x">head top x</string>
+    <string name="formula_editor_sensor_head_top_y">head top y</string>
+    <string name="formula_editor_sensor_neck_x">neck x</string>
+    <string name="formula_editor_sensor_neck_y">neck y</string>
     <string name="formula_editor_sensor_nose_x">بینی x</string>
     <string name="formula_editor_sensor_nose_y">بینی y</string>
     <string name="formula_editor_sensor_left_eye_inner_x">قسمت داخلی چشم چپ x</string>

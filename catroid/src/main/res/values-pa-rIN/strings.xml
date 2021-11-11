@@ -522,6 +522,8 @@
         <item quantity="one">%d ਪ੍ਰੋਜੈਕਟ ਆਯਾਤ ਕੀਤਾ ਗਿਆ.</item>
         <item quantity="other">%d ਪ੍ਰੋਜੈਕਟ ਆਯਾਤ ਕੀਤੇ ਗਏ।</item>
     </plurals>
+    <!-- Renamed -->
+    <string name="renamed_project">Renamed project</string>
     <!--  -->
     <!-- ProjectListActivity and ProjectListFragment -->
     <string name="project_list_title">ਪ੍ਰੋਜੈਕਟ</string>
@@ -533,8 +535,10 @@
     <string name="set_notes_and_credits">ਨੋਟ ਅਤੇ ਕ੍ਰੈਡਿਟ ਸੈਟ ਕਰੋ</string>
     <string name="details_date_today">ਅੱਜ</string>
     <string name="import_project">ਅਯਾਤ ਪ੍ਰੋਜੈਕਟ</string>
+    <string name="export_project">ਪ੍ਰੋਜੈਕਟ ਨੂੰ ਬਾਹਰੀ ਸਟੋਰੇਜ ਤੇ ਸੁਰੱਖਿਅਤ ਕਰੋ</string>
     <string name="error_import_project">ਪ੍ਰੋਜੈਕਟਸ ਨੂੰ ਆਯਾਤ ਕਰਨ ਵੇਲੇ ਕੁਝ ਗਲਤ ਹੋਇਆ.</string>
     <string name="no_projects_selected">ਆਯਾਤ ਲਈ ਕੋਈ ਪ੍ਰੋਜੈਕਟ ਨਹੀਂ ਚੁਣਿਆ ਗਿਆ</string>
+    <string name="only_select_catrobat_files">Only select project files</string>
     <string name="error_no_files_found">ਕੋਈ ਪ੍ਰੋਜੈਕਟ ਫਾਈਲਾਂ ਨਹੀਂ ਮਿਲੀਆਂ.</string>
     <!-- ProjectOptionsFragment -->
     <string name="project_options_description">ਵੇਰਵਾ</string>
@@ -1790,6 +1794,10 @@
     <string name="formula_editor_sensor_second_face_size">ਦੂਜਾ ਚਿਹਰਾ ਅਕਾਰ</string>
     <string name="formula_editor_sensor_second_face_x_position">ਦੂਜਾ ਚਿਹਰਾ x ਸਥਿਤੀ</string>
     <string name="formula_editor_sensor_second_face_y_position">ਦੂਜਾ ਚਿਹਰਾ y ਸਥਿਤੀ</string>
+    <string name="formula_editor_sensor_head_top_x">head top x</string>
+    <string name="formula_editor_sensor_head_top_y">head top y</string>
+    <string name="formula_editor_sensor_neck_x">neck x</string>
+    <string name="formula_editor_sensor_neck_y">neck y</string>
     <string name="formula_editor_sensor_nose_x">ਨੱਕ ਐਕਸ</string>
     <string name="formula_editor_sensor_nose_y">ਨੱਕ y</string>
     <string name="formula_editor_sensor_left_eye_inner_x">ਖੱਬੀ ਅੱਖ ਦਾ ਅੰਦਰੂਨੀ ਐਕਸ</string>

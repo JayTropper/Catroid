@@ -505,6 +505,8 @@
         <item quantity="one">%d প্রকল্প আমদানি করা হয়েছে।</item>
         <item quantity="other">%d প্রকল্প আমদানি করা হয়েছে।</item>
     </plurals>
+    <!-- Renamed -->
+    <string name="renamed_project">Renamed project</string>
     <!--  -->
     <!-- ProjectListActivity and ProjectListFragment -->
     <string name="project_list_title">প্রজেক্টসমূহ</string>
@@ -516,8 +518,10 @@
     <string name="set_notes_and_credits">নোট এবং ক্রেডিট সেট করুন</string>
     <string name="details_date_today">আজ</string>
     <string name="import_project">প্রজেক্ট আমদানি করুন</string>
+    <string name="export_project">বাহ্যিক স্টোরেজে প্রজেক্টটি সংরক্ষণ করুন</string>
     <string name="error_import_project">প্রজেক্টসমূহ আমদানি করার সময় কিছু ভুল হয়েছে।</string>
     <string name="no_projects_selected">আমদানির জন্য কোন প্রকল্প নির্বাচন করা হয়নি</string>
+    <string name="only_select_catrobat_files">Only select project files</string>
     <string name="error_no_files_found">কোনও প্রজেক্ট ফাইল পাওয়া যায়নি।</string>
     <!-- ProjectOptionsFragment -->
     <string name="project_options_description">বর্ণনা</string>
@@ -1751,6 +1755,10 @@
     <string name="formula_editor_sensor_second_face_size">দ্বিতীয় মুখের আকার</string>
     <string name="formula_editor_sensor_second_face_x_position">দ্বিতীয় মুখ এক্স অবস্থান</string>
     <string name="formula_editor_sensor_second_face_y_position">দ্বিতীয় মুখ y অবস্থান</string>
+    <string name="formula_editor_sensor_head_top_x">head top x</string>
+    <string name="formula_editor_sensor_head_top_y">head top y</string>
+    <string name="formula_editor_sensor_neck_x">neck x</string>
+    <string name="formula_editor_sensor_neck_y">neck y</string>
     <string name="formula_editor_sensor_nose_x">নাক x</string>
     <string name="formula_editor_sensor_nose_y">নাক y</string>
     <string name="formula_editor_sensor_left_eye_inner_x">বাম চোখের ভিতরের x</string>

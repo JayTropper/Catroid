@@ -473,6 +473,8 @@
     <plurals name="imported_projects">
         <item quantity="other">นำเข้า %d โครงการ</item>
     </plurals>
+    <!-- Renamed -->
+    <string name="renamed_project">เปลี่ยนชื่อโครงการ</string>
     <!--  -->
     <!-- ProjectListActivity and ProjectListFragment -->
     <string name="project_list_title">โปรแกรม</string>
@@ -484,8 +486,10 @@
     <string name="set_notes_and_credits">ตั้งค่าบันทึกและเครดิต</string>
     <string name="details_date_today">วันนี้</string>
     <string name="import_project">นำเข้าโครงการ</string>
+    <string name="export_project">บันทึกโครงการไปยังที่จัดเก็บข้อมูลภายนอก</string>
     <string name="error_import_project">เกิดข้อผิดพลาดขณะนำเข้าโครงการ</string>
     <string name="no_projects_selected">ไม่ได้เลือกโครงการสำหรับการนำเข้า</string>
+    <string name="only_select_catrobat_files">เลือกเฉพาะไฟล์โครงการ</string>
     <string name="error_no_files_found">ไม่พบไฟล์โครงการ</string>
     <!-- ProjectOptionsFragment -->
     <string name="project_options_description">คำอธิบาย</string>
@@ -1722,6 +1726,10 @@
     <string name="formula_editor_sensor_second_face_size">ขนาดใบหน้าที่สอง</string>
     <string name="formula_editor_sensor_second_face_x_position">ใบหน้าที่สอง x ตำแหน่ง</string>
     <string name="formula_editor_sensor_second_face_y_position">ใบหน้าที่สอง y ตำแหน่ง</string>
+    <string name="formula_editor_sensor_head_top_x">หัวด้านบน x</string>
+    <string name="formula_editor_sensor_head_top_y">หัวด้านบน y</string>
+    <string name="formula_editor_sensor_neck_x">คอ x</string>
+    <string name="formula_editor_sensor_neck_y">คอ y</string>
     <string name="formula_editor_sensor_nose_x">จมูก x</string>
     <string name="formula_editor_sensor_nose_y">จมูก y</string>
     <string name="formula_editor_sensor_left_eye_inner_x">ตาซ้ายด้านใน x</string>

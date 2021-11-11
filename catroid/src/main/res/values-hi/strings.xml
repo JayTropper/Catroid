@@ -520,6 +520,8 @@
         <item quantity="one">आयातित %d प्रोजेक्ट।</item>
         <item quantity="other">आयातित %d प्रोजेक्ट्स।</item>
     </plurals>
+    <!-- Renamed -->
+    <string name="renamed_project">Renamed project</string>
     <!--  -->
     <!-- ProjectListActivity and ProjectListFragment -->
     <string name="project_list_title">प्रोग्राम्स</string>
@@ -531,8 +533,10 @@
     <string name="set_notes_and_credits">नोट्स और क्रेडिट सेट करें</string>
     <string name="details_date_today">आज</string>
     <string name="import_project">आयात परियोजना</string>
+    <string name="export_project">बाहरी संग्रहण के लिए प्रोजेक्ट सहेजें</string>
     <string name="error_import_project">प्रोजेक्ट आयात करते समय कुछ गलत हो गया।</string>
     <string name="no_projects_selected">आयात के लिए कोई प्रोजेक्ट नहीं चुना गया</string>
+    <string name="only_select_catrobat_files">Only select project files</string>
     <string name="error_no_files_found">कोई प्रोजेक्ट फ़ाइल नहीं मिली।</string>
     <!-- ProjectOptionsFragment -->
     <string name="project_options_description">वर्णन</string>
@@ -1788,6 +1792,10 @@
     <string name="formula_editor_sensor_second_face_size">दूसरा चेहरा आकार</string>
     <string name="formula_editor_sensor_second_face_x_position">दूसरा चेहरा एक्स स्थिति</string>
     <string name="formula_editor_sensor_second_face_y_position">दूसरा चेहरा y स्थिति</string>
+    <string name="formula_editor_sensor_head_top_x">head top x</string>
+    <string name="formula_editor_sensor_head_top_y">head top y</string>
+    <string name="formula_editor_sensor_neck_x">neck x</string>
+    <string name="formula_editor_sensor_neck_y">neck y</string>
     <string name="formula_editor_sensor_nose_x">नाक x</string>
     <string name="formula_editor_sensor_nose_y">सुगंधित</string>
     <string name="formula_editor_sensor_left_eye_inner_x">बाईं आंख भीतरी x</string>

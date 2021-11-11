@@ -595,6 +595,8 @@
         <item quantity="many">Импортировано %d проектов.</item>
         <item quantity="other">Импортировано %d проектов.</item>
     </plurals>
+    <!-- Renamed -->
+    <string name="renamed_project">Renamed project</string>
     <!--  -->
     <!-- ProjectListActivity and ProjectListFragment -->
     <string name="project_list_title">Проекты</string>
@@ -606,8 +608,10 @@
     <string name="set_notes_and_credits">Задать заметки и кредиты</string>
     <string name="details_date_today">Сегодня</string>
     <string name="import_project">Импортировать проект</string>
+    <string name="export_project">Сохранить проект на внешнее хранилище</string>
     <string name="error_import_project">Что-то пошло не так при импорте проектов.</string>
     <string name="no_projects_selected">Нет проектов, выбранных для импорта</string>
+    <string name="only_select_catrobat_files">Only select project files</string>
     <string name="error_no_files_found">Файлы проекта не найдены.</string>
     <!-- ProjectOptionsFragment -->
     <string name="project_options_description">Описание</string>
@@ -1877,6 +1881,10 @@
     <string name="formula_editor_sensor_second_face_size">размер второго лица</string>
     <string name="formula_editor_sensor_second_face_x_position">позиция второй по оси x</string>
     <string name="formula_editor_sensor_second_face_y_position">позиция второго лица y</string>
+    <string name="formula_editor_sensor_head_top_x">head top x</string>
+    <string name="formula_editor_sensor_head_top_y">head top y</string>
+    <string name="formula_editor_sensor_neck_x">neck x</string>
+    <string name="formula_editor_sensor_neck_y">neck y</string>
     <string name="formula_editor_sensor_nose_x">нос x</string>
     <string name="formula_editor_sensor_nose_y">нос y</string>
     <string name="formula_editor_sensor_left_eye_inner_x">левый глаз внутренний x</string>

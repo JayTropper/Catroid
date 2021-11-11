@@ -663,6 +663,8 @@
         <item quantity="many">تم استيراد%d مشروع.</item>
         <item quantity="other">تم استيراد%d مشروع.</item>
     </plurals>
+    <!-- Renamed -->
+    <string name="renamed_project">Renamed project</string>
     <!--  -->
     <!-- ProjectListActivity and ProjectListFragment -->
     <string name="project_list_title">البرامج</string>
@@ -674,8 +676,10 @@
     <string name="set_notes_and_credits">تعيين الملاحظات والائتمان</string>
     <string name="details_date_today">اليوم</string>
     <string name="import_project">استيراد مشروع</string>
+    <string name="export_project">حفظ المشروع على الذاكرة الخارجية</string>
     <string name="error_import_project">حدث خطأ أثناء استيراد المشاريع.</string>
     <string name="no_projects_selected">لم يتم تحديد مشاريع للاستيراد</string>
+    <string name="only_select_catrobat_files">Only select project files</string>
     <string name="error_no_files_found">لم يتم العثور على مشاريع.</string>
     <!-- ProjectOptionsFragment -->
     <string name="project_options_description">الوصف</string>
@@ -1957,6 +1961,10 @@
     <string name="formula_editor_sensor_second_face_size">حجم الوجه الثاني</string>
     <string name="formula_editor_sensor_second_face_x_position">الوجه الثاني X الموضع</string>
     <string name="formula_editor_sensor_second_face_y_position">موضع الوجه الثاني ص</string>
+    <string name="formula_editor_sensor_head_top_x">head top x</string>
+    <string name="formula_editor_sensor_head_top_y">head top y</string>
+    <string name="formula_editor_sensor_neck_x">neck x</string>
+    <string name="formula_editor_sensor_neck_y">neck y</string>
     <string name="formula_editor_sensor_nose_x">أنف x</string>
     <string name="formula_editor_sensor_nose_y">الأنف ذ</string>
     <string name="formula_editor_sensor_left_eye_inner_x">العين اليسرى الداخلية x</string>

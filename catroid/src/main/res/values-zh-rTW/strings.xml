@@ -481,6 +481,8 @@
     <plurals name="imported_projects">
         <item quantity="other">已導入 %d 項目。</item>
     </plurals>
+    <!-- Renamed -->
+    <string name="renamed_project">Renamed project</string>
     <!--  -->
     <!-- ProjectListActivity and ProjectListFragment -->
     <string name="project_list_title">程式檔</string>
@@ -492,8 +494,10 @@
     <string name="set_notes_and_credits">設置筆記和學分</string>
     <string name="details_date_today">今天</string>
     <string name="import_project">導入項目</string>
+    <string name="export_project">將項目保存到外部存儲</string>
     <string name="error_import_project">導入項目時出了點問題。</string>
     <string name="no_projects_selected">沒有選擇要導入的項目</string>
+    <string name="only_select_catrobat_files">Only select project files</string>
     <string name="error_no_files_found">未找到項目文件。</string>
     <!-- ProjectOptionsFragment -->
     <string name="project_options_description">描述</string>
@@ -1743,6 +1747,10 @@
     <string name="formula_editor_sensor_second_face_size">第二個臉型</string>
     <string name="formula_editor_sensor_second_face_x_position">第二面 x 位置</string>
     <string name="formula_editor_sensor_second_face_y_position">第二面y位置</string>
+    <string name="formula_editor_sensor_head_top_x">head top x</string>
+    <string name="formula_editor_sensor_head_top_y">head top y</string>
+    <string name="formula_editor_sensor_neck_x">neck x</string>
+    <string name="formula_editor_sensor_neck_y">neck y</string>
     <string name="formula_editor_sensor_nose_x">鼻子 x</string>
     <string name="formula_editor_sensor_nose_y">鼻子 y</string>
     <string name="formula_editor_sensor_left_eye_inner_x">左眼內 x</string>

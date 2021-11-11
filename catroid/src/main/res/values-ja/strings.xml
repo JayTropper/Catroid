@@ -480,6 +480,8 @@
     <plurals name="imported_projects">
         <item quantity="other">インポートされた %d プロジェクト。</item>
     </plurals>
+    <!-- Renamed -->
+    <string name="renamed_project">Renamed project</string>
     <!--  -->
     <!-- ProjectListActivity and ProjectListFragment -->
     <string name="project_list_title">プログラム</string>
@@ -491,8 +493,10 @@
     <string name="set_notes_and_credits">メモとクレジットを設定</string>
     <string name="details_date_today">今日</string>
     <string name="import_project">プロジェクトをインポート</string>
+    <string name="export_project">プロジェクトを外部ストレージに保存</string>
     <string name="error_import_project">プロジェクトのインポート中に問題が発生しました。</string>
     <string name="no_projects_selected">インポート用に選択されたプロジェクトはありません</string>
+    <string name="only_select_catrobat_files">Only select project files</string>
     <string name="error_no_files_found">プロジェクトファイルが見つかりません。</string>
     <!-- ProjectOptionsFragment -->
     <string name="project_options_description">説明</string>
@@ -1733,6 +1737,10 @@
     <string name="formula_editor_sensor_second_face_size">2つ目の面サイズ</string>
     <string name="formula_editor_sensor_second_face_x_position">2つ目の顔 x 位置</string>
     <string name="formula_editor_sensor_second_face_y_position">2番目の顔 y位置</string>
+    <string name="formula_editor_sensor_head_top_x">head top x</string>
+    <string name="formula_editor_sensor_head_top_y">head top y</string>
+    <string name="formula_editor_sensor_neck_x">neck x</string>
+    <string name="formula_editor_sensor_neck_y">neck y</string>
     <string name="formula_editor_sensor_nose_x">鼻x</string>
     <string name="formula_editor_sensor_nose_y">鼻Y</string>
     <string name="formula_editor_sensor_left_eye_inner_x">左目インナーX</string>

@@ -576,6 +576,8 @@ Jeśli jednak nie chcesz tego robić, możesz skorzystać z naszych bezpłatnych
         <item quantity="many">Zaimportowano %d projekt.</item>
         <item quantity="other">Zaimportowano %d projektów.</item>
     </plurals>
+    <!-- Renamed -->
+    <string name="renamed_project">Zmieniono nazwę projektu</string>
     <!--  -->
     <!-- ProjectListActivity and ProjectListFragment -->
     <string name="project_list_title">Projekty</string>
@@ -587,8 +589,10 @@ Jeśli jednak nie chcesz tego robić, możesz skorzystać z naszych bezpłatnych
     <string name="set_notes_and_credits">Ustaw uwagi i podziękowania</string>
     <string name="details_date_today">Dzisiaj</string>
     <string name="import_project">Importuj projekt</string>
+    <string name="export_project">Eksportuj projekt</string>
     <string name="error_import_project">Coś poszło nie tak podczas pobierania projektów.</string>
     <string name="no_projects_selected">Nie wybrano projektów do importu</string>
+    <string name="only_select_catrobat_files">Wybierz tylko pliki projektu</string>
     <string name="error_no_files_found">Nie znaleziono plików projektu.</string>
     <!-- ProjectOptionsFragment -->
     <string name="project_options_description">Opis</string>
@@ -1837,6 +1841,10 @@ Jeśli jednak nie chcesz tego robić, możesz skorzystać z naszych bezpłatnych
     <string name="formula_editor_sensor_second_face_size">rozmiar drugiej twarzy</string>
     <string name="formula_editor_sensor_second_face_x_position">pozycja x drugiej twarzy</string>
     <string name="formula_editor_sensor_second_face_y_position">pozycja y drugiej twarzy</string>
+    <string name="formula_editor_sensor_head_top_x">góra głowy x</string>
+    <string name="formula_editor_sensor_head_top_y">góra głowy y</string>
+    <string name="formula_editor_sensor_neck_x">szyja x</string>
+    <string name="formula_editor_sensor_neck_y">szyja y</string>
     <string name="formula_editor_sensor_nose_x">nos x</string>
     <string name="formula_editor_sensor_nose_y">nos y</string>
     <string name="formula_editor_sensor_left_eye_inner_x">lewe oko wewnętrzne x</string>

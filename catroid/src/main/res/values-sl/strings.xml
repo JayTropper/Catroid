@@ -598,6 +598,8 @@
         <item quantity="few">Imported %d projects.</item>
         <item quantity="other">Imported %d projects.</item>
     </plurals>
+    <!-- Renamed -->
+    <string name="renamed_project">Renamed project</string>
     <!--  -->
     <!-- ProjectListActivity and ProjectListFragment -->
     <string name="project_list_title">Programi</string>
@@ -609,8 +611,10 @@
     <string name="set_notes_and_credits">Set notes and credits</string>
     <string name="details_date_today">Danes</string>
     <string name="import_project">Import project</string>
+    <string name="export_project">Export project</string>
     <string name="error_import_project">Something went wrong while importing projects.</string>
     <string name="no_projects_selected">No projects selected for import</string>
+    <string name="only_select_catrobat_files">Only select project files</string>
     <string name="error_no_files_found">No project files found.</string>
     <!-- ProjectOptionsFragment -->
     <string name="project_options_description">Opis</string>
@@ -1884,6 +1888,10 @@ needs read and write access to it. You can always change permissions through you
     <string name="formula_editor_sensor_second_face_size">second face size</string>
     <string name="formula_editor_sensor_second_face_x_position">second face x position</string>
     <string name="formula_editor_sensor_second_face_y_position">second face y position</string>
+    <string name="formula_editor_sensor_head_top_x">head top x</string>
+    <string name="formula_editor_sensor_head_top_y">head top y</string>
+    <string name="formula_editor_sensor_neck_x">neck x</string>
+    <string name="formula_editor_sensor_neck_y">neck y</string>
     <string name="formula_editor_sensor_nose_x">nose x</string>
     <string name="formula_editor_sensor_nose_y">nose y</string>
     <string name="formula_editor_sensor_left_eye_inner_x">left eye inner x</string>

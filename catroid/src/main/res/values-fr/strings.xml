@@ -517,6 +517,8 @@
         <item quantity="one">Importation du projet %d.</item>
         <item quantity="other">Importation de %d projets.</item>
     </plurals>
+    <!-- Renamed -->
+    <string name="renamed_project">Renamed project</string>
     <!--  -->
     <!-- ProjectListActivity and ProjectListFragment -->
     <string name="project_list_title">Programmes</string>
@@ -528,8 +530,10 @@
     <string name="set_notes_and_credits">Définir les notes et les crédits</string>
     <string name="details_date_today">Aujourd\'hui</string>
     <string name="import_project">Importer un projet</string>
+    <string name="export_project">Enregistrer le projet sur le stockage externe</string>
     <string name="error_import_project">Une erreur s\'est produite lors de l\'importation des projets.</string>
     <string name="no_projects_selected">Aucun projet sélectionné pour l\'importation</string>
+    <string name="only_select_catrobat_files">Only select project files</string>
     <string name="error_no_files_found">Aucun fichier de projet trouvé.</string>
     <!-- ProjectOptionsFragment -->
     <string name="project_options_description">Description</string>
@@ -1783,6 +1787,10 @@ doit avoir accès en lecture et en écriture à la mémoire locale. Vous pouvez 
     <string name="formula_editor_sensor_second_face_size">taille de la seconde face</string>
     <string name="formula_editor_sensor_second_face_x_position">position x de la seconde face</string>
     <string name="formula_editor_sensor_second_face_y_position">position y de la seconde face</string>
+    <string name="formula_editor_sensor_head_top_x">head top x</string>
+    <string name="formula_editor_sensor_head_top_y">head top y</string>
+    <string name="formula_editor_sensor_neck_x">neck x</string>
+    <string name="formula_editor_sensor_neck_y">neck y</string>
     <string name="formula_editor_sensor_nose_x">nez x</string>
     <string name="formula_editor_sensor_nose_y">nez y</string>
     <string name="formula_editor_sensor_left_eye_inner_x">œil gauche intérieur x</string>

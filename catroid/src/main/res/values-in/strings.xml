@@ -484,6 +484,8 @@
     <plurals name="imported_projects">
         <item quantity="other">%d proyek yang diimpor.</item>
     </plurals>
+    <!-- Renamed -->
+    <string name="renamed_project">Renamed project</string>
     <!--  -->
     <!-- ProjectListActivity and ProjectListFragment -->
     <string name="project_list_title">Program</string>
@@ -495,8 +497,10 @@
     <string name="set_notes_and_credits">Atur catatan dan kredit</string>
     <string name="details_date_today">Hari ini</string>
     <string name="import_project">Proyek impor</string>
+    <string name="export_project">Simpan proyek ke penyimpanan eksternal</string>
     <string name="error_import_project">Ada yang tidak beres saat mengimpor proyek.</string>
     <string name="no_projects_selected">Tidak ada proyek yang dipilih untuk diimpor</string>
+    <string name="only_select_catrobat_files">Only select project files</string>
     <string name="error_no_files_found">Tidak ada file proyek yang ditemukan.</string>
     <!-- ProjectOptionsFragment -->
     <string name="project_options_description">Keterangan</string>
@@ -1741,6 +1745,10 @@ membutuhkan akses baca dan tulis untuk itu. Anda selalu dapat mengubah izin mela
     <string name="formula_editor_sensor_second_face_size">ukuran wajah kedua</string>
     <string name="formula_editor_sensor_second_face_x_position">posisi x wajah kedua</string>
     <string name="formula_editor_sensor_second_face_y_position">wajah kedua posisi y</string>
+    <string name="formula_editor_sensor_head_top_x">head top x</string>
+    <string name="formula_editor_sensor_head_top_y">head top y</string>
+    <string name="formula_editor_sensor_neck_x">neck x</string>
+    <string name="formula_editor_sensor_neck_y">neck y</string>
     <string name="formula_editor_sensor_nose_x">hidung x</string>
     <string name="formula_editor_sensor_nose_y">hidung y</string>
     <string name="formula_editor_sensor_left_eye_inner_x">mata kiri bagian dalam x</string>

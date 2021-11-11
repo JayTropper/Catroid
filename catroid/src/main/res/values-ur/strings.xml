@@ -506,6 +506,8 @@
         <item quantity="one">Imported %d project.</item>
         <item quantity="other">Imported %d projects.</item>
     </plurals>
+    <!-- Renamed -->
+    <string name="renamed_project">Renamed project</string>
     <!--  -->
     <!-- ProjectListActivity and ProjectListFragment -->
     <string name="project_list_title">پروگرامات</string>
@@ -517,8 +519,10 @@
     <string name="set_notes_and_credits">نوٹ اور کریڈٹ مقرر کریں</string>
     <string name="details_date_today">آج</string>
     <string name="import_project">پروجیکٹ درآمد کریں</string>
+    <string name="export_project">پراجیکٹ کے لیے بیرونی ذخیرہ محفوظ کریں</string>
     <string name="error_import_project">پروجیکٹ کو درآمد کرتے وقت کچھ غلط ہو گیا.</string>
     <string name="no_projects_selected">No projects selected for import</string>
+    <string name="only_select_catrobat_files">Only select project files</string>
     <string name="error_no_files_found">کوئی پروجیکٹ فائل نہیں ملی.</string>
     <!-- ProjectOptionsFragment -->
     <string name="project_options_description">تفصیل (وضاحت)</string>
@@ -1769,6 +1773,10 @@
     <string name="formula_editor_sensor_second_face_size">second face size</string>
     <string name="formula_editor_sensor_second_face_x_position">second face x position</string>
     <string name="formula_editor_sensor_second_face_y_position">second face y position</string>
+    <string name="formula_editor_sensor_head_top_x">head top x</string>
+    <string name="formula_editor_sensor_head_top_y">head top y</string>
+    <string name="formula_editor_sensor_neck_x">neck x</string>
+    <string name="formula_editor_sensor_neck_y">neck y</string>
     <string name="formula_editor_sensor_nose_x">nose x</string>
     <string name="formula_editor_sensor_nose_y">nose y</string>
     <string name="formula_editor_sensor_left_eye_inner_x">left eye inner x</string>

@@ -475,6 +475,8 @@
     <plurals name="imported_projects">
         <item quantity="other">导入了 %d 项目。</item>
     </plurals>
+    <!-- Renamed -->
+    <string name="renamed_project">Renamed project</string>
     <!--  -->
     <!-- ProjectListActivity and ProjectListFragment -->
     <string name="project_list_title">程序</string>
@@ -486,8 +488,10 @@
     <string name="set_notes_and_credits">设置笔记和点数</string>
     <string name="details_date_today">今天</string>
     <string name="import_project">导入项目</string>
+    <string name="export_project">保存项目到外部存储</string>
     <string name="error_import_project">获取项目时出错。</string>
     <string name="no_projects_selected">没有选择进口的项目</string>
+    <string name="only_select_catrobat_files">Only select project files</string>
     <string name="error_no_files_found">未找到项目。</string>
     <!-- ProjectOptionsFragment -->
     <string name="project_options_description">描述</string>
@@ -1722,6 +1726,10 @@ dash(-), 下划线 (_), 和 句号(.).</string>
     <string name="formula_editor_sensor_second_face_size">第二面大小</string>
     <string name="formula_editor_sensor_second_face_x_position">第二面 x 位置</string>
     <string name="formula_editor_sensor_second_face_y_position">第二面 y 位置</string>
+    <string name="formula_editor_sensor_head_top_x">head top x</string>
+    <string name="formula_editor_sensor_head_top_y">head top y</string>
+    <string name="formula_editor_sensor_neck_x">neck x</string>
+    <string name="formula_editor_sensor_neck_y">neck y</string>
     <string name="formula_editor_sensor_nose_x">鼻子x</string>
     <string name="formula_editor_sensor_nose_y">鼻子y</string>
     <string name="formula_editor_sensor_left_eye_inner_x">左眼内 x</string>

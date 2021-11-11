@@ -505,6 +505,8 @@
         <item quantity="one">%d projesi içe aktarıldı.</item>
         <item quantity="other">%d projeleri içe aktarıldı.</item>
     </plurals>
+    <!-- Renamed -->
+    <string name="renamed_project">Renamed project</string>
     <!--  -->
     <!-- ProjectListActivity and ProjectListFragment -->
     <string name="project_list_title">Projeler</string>
@@ -516,8 +518,10 @@
     <string name="set_notes_and_credits">Notları ve krediyi ayarla</string>
     <string name="details_date_today">Bugün</string>
     <string name="import_project">Projeyi içe aktar</string>
+    <string name="export_project">Projeyi harici depolamaya kaydedin</string>
     <string name="error_import_project">Projeler içe aktarılırken bir şeyler ters gitti.</string>
     <string name="no_projects_selected">İçe aktarmak için hiçbir proje seçilmedi</string>
+    <string name="only_select_catrobat_files">Only select project files</string>
     <string name="error_no_files_found">Proje dosyası bulunamadı.</string>
     <!-- ProjectOptionsFragment -->
     <string name="project_options_description">Açıklama</string>
@@ -1742,6 +1746,10 @@ bekleyin</string>
     <string name="formula_editor_sensor_second_face_size">ikinci yüz boyutu</string>
     <string name="formula_editor_sensor_second_face_x_position">ikinci yüz x konumu</string>
     <string name="formula_editor_sensor_second_face_y_position">ikinci yüz y konumu</string>
+    <string name="formula_editor_sensor_head_top_x">head top x</string>
+    <string name="formula_editor_sensor_head_top_y">head top y</string>
+    <string name="formula_editor_sensor_neck_x">neck x</string>
+    <string name="formula_editor_sensor_neck_y">neck y</string>
     <string name="formula_editor_sensor_nose_x">burun x</string>
     <string name="formula_editor_sensor_nose_y">burun y</string>
     <string name="formula_editor_sensor_left_eye_inner_x">sol göz iç x</string>
