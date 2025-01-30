@@ -207,7 +207,7 @@ public class Look extends Image {
 
 	private void initialiseParticleEffect() {
 		particleEffect = new ParticleEffect();
-		particleEffect.load(Gdx.files.internal("particles"), Gdx.files.internal(""));
+		particleEffect.load(Gdx.files.internal("former_assets/particles"), Gdx.files.internal(""));
 		particleEffect.start();
 	}
 

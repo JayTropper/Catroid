@@ -68,5 +68,10 @@
         android:title="@string/sort_projects"
         app:showAsAction="never"
         android:icon="@drawable/ic_sort"/>
+    <item
+        android:id="@+id/start_godot_game"
+        android:title="@string/start_godot"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_godot"/>
 
 </menu>

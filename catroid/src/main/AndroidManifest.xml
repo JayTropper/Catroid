@@ -252,6 +252,9 @@
         <activity
             android:name=".ui.filepicker.FilePickerActivity" />
 
+        <activity
+            android:name=".stage.godot.GodotStageActivity" />
+
         <service
             android:name=".transfers.project.ProjectUploadService"
             android:foregroundServiceType="dataSync" />

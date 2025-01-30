@@ -252,12 +252,14 @@
         <service android:name=".cast.CastService" android:exported="false"/>-->
 
         <provider
+            tools:replace="android:authorities"
             android:authorities="${applicationId}.fileProvider"
             android:name="androidx.core.content.FileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
 
             <meta-data
+                tools:replace="android:resource"
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
