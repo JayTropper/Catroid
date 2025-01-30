@@ -53,6 +53,7 @@ import org.catrobat.catroid.io.asynctask.ProjectLoader
 import org.catrobat.catroid.io.asynctask.ProjectLoader.ProjectLoadListener
 import org.catrobat.catroid.io.asynctask.ProjectRenamer
 import org.catrobat.catroid.io.asynctask.ProjectUnZipperAndImporter
+import org.catrobat.catroid.stage.godot.GodotStageActivity
 import org.catrobat.catroid.ui.BottomBar
 import org.catrobat.catroid.ui.ProjectActivity
 import org.catrobat.catroid.ui.ProjectListActivity
@@ -166,6 +167,7 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
         when (item.itemId) {
             R.id.import_project -> showImportChooser()
             R.id.sort_projects -> sortProjects()
+            R.id.start_godot_game -> startGodotGame()
             else -> return super.onOptionsItemSelected(item)
         }
         return true
@@ -192,7 +194,11 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
+    private fun startGodotGame() {
+        val intent = Intent(this.context, GodotStageActivity::class.java)
+        startActivity(intent)
+    }
+
     private fun importUsingSystemFilePicker() {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)

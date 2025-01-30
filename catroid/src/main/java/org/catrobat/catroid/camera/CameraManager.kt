@@ -47,7 +47,7 @@ import org.koin.java.KoinJavaComponent.get
 
 class CameraManager(private val stageActivity: StageActivity) : LifecycleOwner {
     private val cameraProvider = ProcessCameraProvider.getInstance(stageActivity).get()
-    private val lifecycle = LifecycleRegistry(this)
+    override val lifecycle = LifecycleRegistry(this)
     val previewView = PreviewView(stageActivity).apply {
         visibility = View.INVISIBLE
     }
@@ -281,6 +281,4 @@ class CameraManager(private val stageActivity: StageActivity) : LifecycleOwner {
         ToastUtil.showError(stageActivity, stageActivity.getString(R.string.camera_error_generic))
         destroy()
     }
-
-    override fun getLifecycle() = lifecycle
 }

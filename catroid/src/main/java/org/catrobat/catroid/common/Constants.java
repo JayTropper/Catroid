@@ -103,7 +103,7 @@ public final class Constants {
 	public static final String BACKPACK_IMAGE_DIRECTORY_NAME = "backpack_image";
 
 	// Trusted domains for Web access bricks
-	public static final String TRUSTED_DOMAINS_FILE_NAME = "trustedDomains.json";
+	public static final String TRUSTED_DOMAINS_FILE_NAME = "former_assets/trustedDomains.json";
 	public static final String TRUSTED_USER_DOMAINS_FILE_NAME = "trustedUserDomains.json";
 	public static final String TRUST_LIST_JSON_ARRAY_NAME = "domains";
 	public static final File TRUSTED_USER_DOMAINS_FILE = new File(DEFAULT_ROOT_DIRECTORY, TRUSTED_USER_DOMAINS_FILE_NAME);

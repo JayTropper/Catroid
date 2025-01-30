@@ -1,6 +1,6 @@
 /*
  * Catroid: An on-device visual programming system for Android devices
- * Copyright (C) 2010-2022 The Catrobat Team
+ * Copyright (C) 2010-2024 The Catrobat Team
  * (<http://developer.catrobat.org/credits>)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -21,34 +21,29 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+package org.catrobat.catroid.stage.godot
 
-buildscript {
-    ext.kotlin_version = '1.8.22'
-    ext.koin_version = '2.1.6'
-    ext.lifecycle_version = '2.2.0'
-    ext.jacoco_core_version = '0.8.7'
-    repositories {
-        google()
-        mavenCentral()
-        maven { url "https://developer.huawei.com/repo/" }
+import org.godotengine.godot.Godot
+import org.godotengine.godot.plugin.GodotPlugin
+import org.godotengine.godot.plugin.SignalInfo
+
+/**
+ * This class is the required connection from pocket code to godot.
+ * It enables the sending of signals to the running godot game, but not vice versa.
+ */
+class GodotStagePlugin(godot: Godot) : GodotPlugin(godot) {
+
+    companion object {
+        val SIGNALS: MutableSet<SignalInfo> = mutableSetOf(SignalInfo("default", String::class.java))
     }
 
-    dependencies {
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-        classpath 'com.android.tools.build:gradle:7.4.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "org.jacoco:org.jacoco.core:$jacoco_core_version"
-        classpath 'com.huawei.agconnect:agcp:1.4.2.300'
-    }
-}
+    override fun getPluginName() = "AppPlugin"
 
-allprojects {
-    repositories {
-        mavenLocal()
-        google()
-        mavenCentral()
-        maven { url "https://developer.huawei.com/repo/" }
+    override fun getPluginSignals(): Set<SignalInfo> {
+        return SIGNALS
+    }
+
+    fun emitGodotSignal(signalName: String, signalArgs: Any) {
+        emitSignal(signalName, signalArgs)
     }
 }

@@ -177,6 +177,15 @@ android {
                 arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
             }
         }
+        // Needed for Godot:
+        // The default ignore pattern for the 'assets' directory includes hidden files and
+        // directories which are used by Godot projects, so we override it with the following.
+        aaptOptions {
+            ignoreAssetsPattern "!.svn:!.git:!.gitignore:!.ds_store:!*.scc:<dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"
+        }/*
+        ndk {
+            abiFilters 'arm64-v8a'
+        }*/
     }
 
 
@@ -192,6 +201,9 @@ android {
     sourceSets {
         androidTest {
             resources.srcDirs += ['src/androidTest/res', 'src/androidTest/assets']
+        }
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
         }
     }
 
@@ -520,6 +532,8 @@ dependencies {
 
     // Room Test helpers
     testImplementation("androidx.room:room-testing:$room_version")
+
+    implementation "org.godotengine:godot:4.3.0.stable"
 }
 
 static def getGitCommitInfo() {
