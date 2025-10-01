@@ -535,7 +535,7 @@
     <string formatted="false" name="notes_and_credits_title">নোট এবং ক্রেডিট:</string>
     <string formatted="false" name="set_notes_and_credits">নোট এবং ক্রেডিট সেট করুন</string>
     <string formatted="false" name="details_date_today">আজ</string>
-    <string formatted="false" name="import_project">প্রজেক্ট আমদানি করুন</string>
+    <string formatted="false" name="import_catrobat_project">প্রজেক্ট আমদানি করুন</string>
     <string formatted="false" name="export_project">বাহ্যিক স্টোরেজে প্রজেক্টটি সংরক্ষণ করুন</string>
     <string formatted="false" name="error_import_project">প্রজেক্টসমূহ আমদানি করার সময় কিছু ভুল হয়েছে।</string>
     <string formatted="false" name="no_projects_selected">আমদানির জন্য কোন প্রকল্প নির্বাচন করা হয়নি</string>

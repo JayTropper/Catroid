@@ -617,8 +617,11 @@
     <string formatted="false" name="error_import_project">Something went wrong while importing projects.</string>
     <string formatted="false" name="no_projects_selected">No projects selected for import</string>
     <string formatted="false" name="only_select_catrobat_files">Only select project files</string>
+    <string formatted="false" name="only_select_godot_projects">Only select Godot projects</string>
     <string formatted="false" name="error_no_files_found">No project files found.</string>
     <string formatted="false" name="import_sprite_from_project_launcher">Import Object from Local Project</string>
+    <string formatted="false" name="outdated_android_version_godot">Your Android version does not support Pocket Code Godot functionalities.</string>
+
 
     <!-- ProjectOptionsFragment -->
     <string formatted="false" name="project_options_description">Description</string>
@@ -2329,5 +2332,6 @@ needs read and write access to it. You can always change permissions through you
 
     <string formatted="false" name="undo_sort">Undo sort</string>
     <string formatted="false" name="sort">Sort</string>
-    <string formatted="false" name="checkbox">checkbox</string><string name="start_godot">Start Godot</string>
+    <string formatted="false" name="checkbox">checkbox</string>
+    <string name="start_godot">Start Godot</string>
 </resources>

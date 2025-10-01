@@ -28,6 +28,7 @@ import junit.framework.TestCase
 import org.catrobat.catroid.common.Constants.CACHE_DIRECTORY
 import org.catrobat.catroid.common.Constants.CODE_XML_FILE_NAME
 import org.catrobat.catroid.common.FlavoredConstants.DEFAULT_ROOT_DIRECTORY
+import org.catrobat.catroid.common.ProjectType
 import org.catrobat.catroid.content.backwardcompatibility.ProjectMetaDataParser
 import org.catrobat.catroid.io.StorageOperations
 import org.catrobat.catroid.io.asynctask.unzipAndImportProjects
@@ -84,7 +85,7 @@ class ProjectUnZipperAndImporterTest {
             IsCollectionContaining.hasItem(AIR_FIGHT_0_5)
         )
         val xmlFile = File(File(DEFAULT_ROOT_DIRECTORY, AIR_FIGHT_0_5), CODE_XML_FILE_NAME)
-        assertEquals(AIR_FIGHT_0_5, ProjectMetaDataParser(xmlFile).projectMetaData.name)
+        assertEquals(AIR_FIGHT_0_5, ProjectMetaDataParser(xmlFile, ProjectType.CATROBAT).projectMetaData.name)
     }
 
     @Test
@@ -95,12 +96,13 @@ class ProjectUnZipperAndImporterTest {
         MatcherAssert.assertThat(projectNames, IsCollectionContaining.hasItem(AIR_FIGHT_0_5))
 
         var xmlFile = File(File(DEFAULT_ROOT_DIRECTORY, AIR_FIGHT_0_5), CODE_XML_FILE_NAME)
-        assertEquals(AIR_FIGHT_0_5, ProjectMetaDataParser(xmlFile).projectMetaData.name)
+        assertEquals(AIR_FIGHT_0_5, ProjectMetaDataParser(xmlFile, ProjectType.CATROBAT).projectMetaData
+            .name)
         projectNames = FileMetaDataExtractor.getProjectNames(DEFAULT_ROOT_DIRECTORY)
         MatcherAssert.assertThat(projectNames, IsCollectionContaining.hasItem(FALLING_BALLS))
 
         xmlFile = File(File(DEFAULT_ROOT_DIRECTORY, FALLING_BALLS), CODE_XML_FILE_NAME)
-        assertEquals(FALLING_BALLS, ProjectMetaDataParser(xmlFile).projectMetaData.name)
+        assertEquals(FALLING_BALLS, ProjectMetaDataParser(xmlFile, ProjectType.CATROBAT).projectMetaData.name)
     }
 
     @Test
@@ -111,12 +113,12 @@ class ProjectUnZipperAndImporterTest {
         MatcherAssert.assertThat(projectNames, IsCollectionContaining.hasItem(AIR_FIGHT_0_5))
 
         var xmlFile = File(File(DEFAULT_ROOT_DIRECTORY, AIR_FIGHT_0_5), CODE_XML_FILE_NAME)
-        assertEquals(AIR_FIGHT_0_5, ProjectMetaDataParser(xmlFile).projectMetaData.name)
+        assertEquals(AIR_FIGHT_0_5, ProjectMetaDataParser(xmlFile, ProjectType.CATROBAT).projectMetaData.name)
         TestCase.assertTrue(unzipAndImportProjects(arrayOf(projectAirFightFile)))
         projectNames = FileMetaDataExtractor.getProjectNames(DEFAULT_ROOT_DIRECTORY)
         MatcherAssert.assertThat(projectNames, IsCollectionContaining.hasItem(AIR_FIGHT_0_5_1))
 
         xmlFile = File(File(DEFAULT_ROOT_DIRECTORY, AIR_FIGHT_0_5_1), CODE_XML_FILE_NAME)
-        assertEquals(AIR_FIGHT_0_5_1, ProjectMetaDataParser(xmlFile).projectMetaData.name)
+        assertEquals(AIR_FIGHT_0_5_1, ProjectMetaDataParser(xmlFile, ProjectType.CATROBAT).projectMetaData.name)
     }
 }

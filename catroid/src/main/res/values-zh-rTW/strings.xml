@@ -511,7 +511,7 @@
     <string formatted="false" name="notes_and_credits_title">註釋和學分：</string>
     <string formatted="false" name="set_notes_and_credits">設置筆記和學分</string>
     <string formatted="false" name="details_date_today">今天</string>
-    <string formatted="false" name="import_project">導入項目</string>
+    <string formatted="false" name="import_catrobat_project">導入項目</string>
     <string formatted="false" name="export_project">將項目保存到外部存儲</string>
     <string formatted="false" name="error_import_project">導入項目時出了點問題。</string>
     <string formatted="false" name="no_projects_selected">沒有選擇要導入的項目</string>

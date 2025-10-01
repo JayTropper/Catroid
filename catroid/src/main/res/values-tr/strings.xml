@@ -535,7 +535,7 @@
     <string formatted="false" name="notes_and_credits_title">Notlar ve krediler:</string>
     <string formatted="false" name="set_notes_and_credits">Notları ve krediyi ayarla</string>
     <string formatted="false" name="details_date_today">Bugün</string>
-    <string formatted="false" name="import_project">Projeyi içe aktar</string>
+    <string formatted="false" name="import_catrobat_project">Projeyi içe aktar</string>
     <string formatted="false" name="export_project">Projeyi harici depolamaya kaydedin</string>
     <string formatted="false" name="error_import_project">Projeler içe aktarılırken bir şeyler ters gitti.</string>
     <string formatted="false" name="no_projects_selected">İçe aktarmak için hiçbir proje seçilmedi</string>

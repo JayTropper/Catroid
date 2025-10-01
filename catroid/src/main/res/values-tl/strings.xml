@@ -553,7 +553,7 @@ Pakiusap sumubok na lamang ng iba.</string>
     <string formatted="false" name="notes_and_credits_title">Mga Notes at Credits:</string>
     <string formatted="false" name="set_notes_and_credits">Mag-set ng Notes at credits</string>
     <string formatted="false" name="details_date_today">Ngayong Araw</string>
-    <string formatted="false" name="import_project">I-import ang proyekto</string>
+    <string formatted="false" name="import_catrobat_project">I-import ang proyekto</string>
     <string formatted="false" name="export_project">Mag-export ng proyekto</string>
     <string formatted="false" name="error_import_project">May nangyaring hindi maganda habang nag-i-import ng proyekto.</string>
     <string formatted="false" name="no_projects_selected">Walang proyektong napili para i-import.</string>

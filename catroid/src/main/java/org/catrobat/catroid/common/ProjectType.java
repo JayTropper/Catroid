@@ -1,6 +1,6 @@
 /*
  * Catroid: An on-device visual programming system for Android devices
- * Copyright (C) 2010-2024 The Catrobat Team
+ * Copyright (C) 2010-2025 The Catrobat Team
  * (<http://developer.catrobat.org/credits>)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -21,26 +21,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package org.catrobat.catroid.stage.godot
+package org.catrobat.catroid.common;
 
-import android.content.Intent
-import android.os.Bundle
-import org.catrobat.catroid.ui.ProjectListActivity
-import org.godotengine.godot.Godot
-import org.godotengine.godot.GodotFragment
-import org.koin.ext.getScopeId
-import java.lang.Exception
-
-class CatroidGodotFragment: GodotFragment() {
-
-    override fun onGodotForceQuit(instance: Godot?) {
-        activity?.finish()
-        super.onGodotForceQuit(instance)
-        val intent = Intent(context, ProjectListActivity::class.java)
-        startActivity(intent)
-    }
-
-    override fun onCreate(icicle: Bundle?) {
-        super.onCreate(icicle)
-    }
+public enum ProjectType {
+	CATROBAT,
+	GODOT
 }

@@ -490,7 +490,7 @@
     <string formatted="false" name="notes_and_credits_title">노트와 크레딧</string>
     <string formatted="false" name="set_notes_and_credits">노트와 크레딧</string>
     <string formatted="false" name="details_date_today">오늘</string>
-    <string formatted="false" name="import_project">프로젝트 가져오기</string>
+    <string formatted="false" name="import_catrobat_project">프로젝트 가져오기</string>
     <string formatted="false" name="export_project">외부 저장장치에 저장</string>
     <string formatted="false" name="error_import_project">프로젝트를 가져오는 동안 문제가 발생했습니다.</string>
     <string formatted="false" name="no_projects_selected">가져올 프로젝트가 없습니다.</string>

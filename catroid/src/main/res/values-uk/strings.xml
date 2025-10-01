@@ -627,7 +627,7 @@
     <string formatted="false" name="notes_and_credits_title">Примітки та автори:</string>
     <string formatted="false" name="set_notes_and_credits">Додати примітки та авторів</string>
     <string formatted="false" name="details_date_today">Сьогодні</string>
-    <string formatted="false" name="import_project">Імпортувати проєкт</string>
+    <string formatted="false" name="import_catrobat_project">Імпортувати проєкт</string>
     <string formatted="false" name="export_project">Експортувати проєкт</string>
     <string formatted="false" name="error_import_project">Під час імпорту проєктів сталася помилка.</string>
     <string formatted="false" name="no_projects_selected">Для імпорту не вибрано жодного проєкту</string>

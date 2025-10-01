@@ -626,7 +626,7 @@
     <string formatted="false" name="notes_and_credits_title">Примечания и авторы:</string>
     <string formatted="false" name="set_notes_and_credits">Добавить примечания и авторов</string>
     <string formatted="false" name="details_date_today">Сегодня</string>
-    <string formatted="false" name="import_project">Импортировать проект</string>
+    <string formatted="false" name="import_catrobat_project">Импортировать проект</string>
     <string formatted="false" name="export_project">Экспортировать проект</string>
     <string formatted="false" name="error_import_project">Что-то пошло не так при импорте проектов.</string>
     <string formatted="false" name="no_projects_selected">Проекты для импорта не выбраны</string>

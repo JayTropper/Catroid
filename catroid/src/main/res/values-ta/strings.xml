@@ -543,7 +543,7 @@
     <string formatted="false" name="notes_and_credits_title">Notes and credits:</string>
     <string formatted="false" name="set_notes_and_credits">Set notes and credits</string>
     <string formatted="false" name="details_date_today">இன்று</string>
-    <string formatted="false" name="import_project">செயற்திட்டத்தை இறக்குமதி செய்</string>
+    <string formatted="false" name="import_catrobat_project">செயற்திட்டத்தை இறக்குமதி செய்</string>
     <string formatted="false" name="export_project">திட்டத்தை வெளிப்புற சேமிப்பகத்தில் சேமிக்கவும்</string>
     <string formatted="false" name="error_import_project">திட்டங்களை இறக்குமதி செய்யும் போது ஏதோ தவறு ஏற்பட்டது.</string>
     <string formatted="false" name="no_projects_selected">No projects selected for import</string>

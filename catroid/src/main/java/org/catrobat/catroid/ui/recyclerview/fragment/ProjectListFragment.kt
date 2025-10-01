@@ -36,17 +36,19 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.PluralsRes
-import androidx.annotation.RequiresApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import androidx.documentfile.provider.DocumentFile
 import org.catrobat.catroid.ProjectManager
 import org.catrobat.catroid.R
 import org.catrobat.catroid.common.Constants
 import org.catrobat.catroid.common.FlavoredConstants
 import org.catrobat.catroid.common.ProjectData
+import org.catrobat.catroid.common.ProjectType
 import org.catrobat.catroid.common.SharedPreferenceKeys
 import org.catrobat.catroid.content.backwardcompatibility.ProjectMetaDataParser
 import org.catrobat.catroid.exceptions.LoadingProjectException
@@ -57,7 +59,7 @@ import org.catrobat.catroid.io.asynctask.ProjectLoader
 import org.catrobat.catroid.io.asynctask.ProjectLoader.ProjectLoadListener
 import org.catrobat.catroid.io.asynctask.ProjectRenamer
 import org.catrobat.catroid.io.asynctask.ProjectUnZipperAndImporter
-import org.catrobat.catroid.stage.godot.GodotStageActivity
+import org.catrobat.catroid.stage.godot.RunGodotGameActivity
 import org.catrobat.catroid.ui.BottomBar
 import org.catrobat.catroid.ui.ProjectActivity
 import org.catrobat.catroid.ui.ProjectListActivity
@@ -73,6 +75,8 @@ import org.catrobat.catroid.utils.ToastUtil
 import org.koin.android.ext.android.inject
 import java.io.File
 import java.io.IOException
+import java.io.InputStream
+import java.io.OutputStream
 import java.util.concurrent.locks.ReentrantLock
 
 @SuppressLint("NotifyDataSetChanged")
@@ -84,6 +88,8 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
 
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
 
+    private var filesForImportTask: ArrayList<File>? = null
+
     private val projectManager: ProjectManager by inject()
 
     private val lock = ReentrantLock()
@@ -91,9 +97,10 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
     override fun onActivityCreated(savedInstance: Bundle?) {
         super.onActivityCreated(savedInstance)
         filesForUnzipAndImportTask = ArrayList()
+        filesForImportTask = ArrayList()
         hasUnzipAndImportTaskFinished = true
         if (arguments != null) {
-            importProject(requireArguments().getParcelable("intent"))
+            importProject(requireArguments().getParcelable("intent"), ProjectType.CATROBAT)
         }
         if (requireActivity().intent?.hasExtra(ProjectListActivity.IMPORT_LOCAL_INTENT) == true) {
             adapter.showSettings = false
@@ -109,8 +116,8 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
                 requireContext(),
                 resources.getQuantityString(
                     R.plurals.imported_projects,
-                    filesForUnzipAndImportTask?.size ?: 0,
-                    filesForUnzipAndImportTask?.size ?: 0
+                    filesForUnzipAndImportTask?.size?.plus(filesForImportTask?.size!!) ?: 0,
+                    filesForUnzipAndImportTask?.size?.plus(filesForImportTask?.size!!) ?: 0
                 )
             )
         }
@@ -119,6 +126,7 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
             override fun onProjectsLoaded() {
                 setAdapterItems(adapter.projectsSorted)
                 filesForUnzipAndImportTask?.clear()
+                filesForImportTask?.clear()
                 setShowProgressBar(false)
             }
         })
@@ -191,7 +199,8 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.import_project -> showImportChooser()
+            R.id.import_catrobat_project -> showCatroidImportChooser()
+            R.id.import_godot_project -> showGodotImportChooser()
             R.id.sort_projects -> sortProjects()
             R.id.start_godot_game -> startGodotGame()
             else -> return super.onOptionsItemSelected(item)
@@ -213,7 +222,7 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
         }
     }
 
-    private fun showImportChooser() {
+    private fun showCatroidImportChooser() {
         setShowProgressBar(true)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             importUsingSystemFilePicker()
@@ -223,9 +232,50 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
     }
 
     private fun startGodotGame() {
-        val intent = Intent(this.context, GodotStageActivity::class.java)
-        startActivity(intent)
+//        val intent = Intent(this.context, GodotStageActivity::class.java)
+//        startActivity(intent)
+
+        val godotActivity = RunGodotGameActivity()
+        this.context?.let {
+            godotActivity.onNewGodotInstanceRequested(
+                it, args = arrayOf(
+                    "--path",
+                    "/storage/emulated/0/Android/data/org.catrobat" +
+                        ".catroid/files/godot_minimal_project"
+                    /*"/storage/emulated/0/Documents/godot_minimal_project",
+                    "--editor-pid",
+                    "23565",
+                    "--position",
+                    "0,0",
+                    "res://main.tscn"*/
+                )
+            )
+        }
     }
+
+    private fun startGodotGame(godotDirectory: File) {
+        val godotActivity = RunGodotGameActivity()
+        val path = godotDirectory.path
+
+        if (godotDirectory.exists()) {
+            Log.d(TAG, "Printing all files of the Godot project.")
+            godotDirectory.listFiles()?.forEach { file -> {
+                Log.e(TAG, file.name)
+            } }
+        } else {
+            Log.d(TAG, "The passed Godot directory does not exist.")
+        }
+        this.context?.let {
+            godotActivity.onNewGodotInstanceRequested(it, args = arrayOf("--path", path))
+        }
+    }
+
+    private val importCatrobatLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == RESULT_OK) {
+                importProject(result.data, ProjectType.CATROBAT)
+            }
+        }
 
     private fun importUsingSystemFilePicker() {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
@@ -235,7 +285,7 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
             putExtra(DocumentsContract.EXTRA_INITIAL_URI, Environment.DIRECTORY_DOWNLOADS)
         }
         val title = requireContext().resources.getString(R.string.import_project)
-        startActivityForResult(Intent.createChooser(intent, title), REQUEST_IMPORT_PROJECT)
+        importCatrobatLauncher.launch(Intent.createChooser(intent, title))
     }
 
     private fun importUsingFilePickerActivity() {
@@ -245,22 +295,12 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
             R.string.runtime_permission_general
         ) {
             override fun task() {
-                startActivityForResult(
-                    Intent(requireContext(), FilePickerActivity::class.java),
-                    REQUEST_IMPORT_PROJECT
-                )
+                importCatrobatLauncher.launch(Intent(requireContext(), FilePickerActivity::class.java))
             }
         }.execute(requireActivity())
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQUEST_IMPORT_PROJECT && resultCode == RESULT_OK) {
-            importProject(data)
-        }
-    }
-
-    private fun importProject(data: Intent?) {
+    private fun importProject(data: Intent?, projectType: ProjectType) {
         if (data == null) {
             onImportError()
             return
@@ -276,7 +316,11 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
             extractAllUris(data, uris)
         }
         try {
-            importProjectUris(uris)
+            if (projectType == ProjectType.CATROBAT) {
+                importCatrobatProjectUris(uris)
+            } else if (projectType == ProjectType.GODOT) {
+                importGodotProjectUris(uris)
+            }
         } catch (e: IOException) {
             Log.e(TAG, "Cannot resolve project to import.", e)
         }
@@ -302,8 +346,8 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
         }
     }
 
-    private fun importProjectUris(uris: ArrayList<Uri>) {
-        prepareFilesForImport(uris)
+    private fun importCatrobatProjectUris(uris: ArrayList<Uri>) {
+        prepareCatrobatFilesForImport(uris)
         filesForUnzipAndImportTask?.apply {
             if (isNotEmpty()) {
                 setShowProgressBar(true)
@@ -314,7 +358,7 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
         }
     }
 
-    private fun prepareFilesForImport(urisToImport: ArrayList<Uri>) {
+    private fun prepareCatrobatFilesForImport(urisToImport: ArrayList<Uri>) {
         for (uri in urisToImport) {
             val contentResolver = requireActivity().contentResolver
             var fileName = StorageOperations.resolveFileName(contentResolver, uri)
@@ -323,11 +367,11 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
                 continue
             }
             fileName = fileName.replace(Constants.CATROBAT_EXTENSION, Constants.ZIP_EXTENSION)
-            copyFileContentToCacheFile(uri, fileName)
+            copyCatrobatFileContentToCacheFile(uri, fileName)
         }
     }
 
-    private fun copyFileContentToCacheFile(uri: Uri, fileName: String) {
+    private fun copyCatrobatFileContentToCacheFile(uri: Uri, fileName: String) {
         val projectFile = StorageOperations.copyUriToDir(
             requireActivity().contentResolver, uri,
             Constants.CACHE_DIRECTORY, fileName
@@ -363,7 +407,7 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
         for (projectData in selectedItems) {
             projectData ?: continue
             val name = uniqueNameProvider.getUniqueNameInNameables(projectData.name, usedProjectNames)
-            usedProjectNames.add(ProjectData(name, null, 0.0, false))
+            usedProjectNames.add(ProjectData(name, null, 0.0, false, ProjectType.CATROBAT))
             val projectCopier = ProjectCopier(projectData.directory, name)
             projectCopier.copyProjectAsync({ success: Boolean -> onCopyProjectComplete(success) })
         }
@@ -384,6 +428,7 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
                 items.remove(item)
             } catch (e: IOException) {
                 Log.e(TAG, Log.getStackTraceString(e))
+                items.remove(item)
             }
             adapter.remove(item)
             deletedItemCount++
@@ -400,7 +445,7 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
         checkForEmptyList()
     }
 
-    fun checkForEmptyList() {
+    private fun checkForEmptyList() {
         if (adapter.items.isEmpty()) {
             setShowProgressBar(true)
             if (projectManager.initializeDefaultProject()) {
@@ -464,7 +509,11 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
             NONE -> {
                 setShowProgressBar(true)
                 val directoryFile = item?.directory ?: return
-                ProjectLoader(directoryFile, requireContext()).setListener(this).loadProjectAsync()
+                if (item.projectType.equals(ProjectType.CATROBAT)) {
+                    ProjectLoader(directoryFile, requireContext()).setListener(this).loadProjectAsync()
+                } else if (item.projectType.equals(ProjectType.GODOT)) {
+                    startGodotGame(item.directory)
+                }
             }
             IMPORT_LOCAL -> {
                 val intent = Intent()
@@ -555,6 +604,106 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
         adapter.notifyDataSetChanged()
     }
 
+    /**
+     * Godot import methods
+     */
+    private fun showGodotImportChooser() {
+        setShowProgressBar(true)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            importUsingSystemFolderPicker()
+        } else {
+            ToastUtil.showError(requireContext(), R.string.outdated_android_version_godot)
+        }
+    }
+
+    private fun importUsingSystemFolderPicker() {
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT_TREE).apply {
+            addCategory(Intent.CATEGORY_DEFAULT)
+            putExtra(DocumentsContract.EXTRA_INITIAL_URI, Environment.DIRECTORY_DOWNLOADS)
+        }
+        importGodotLauncher.launch(intent)
+    }
+
+    private val importGodotLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == RESULT_OK) {
+                importProject(result.data, ProjectType.GODOT)
+            }
+        }
+
+    private fun importGodotProjectUris(uris: ArrayList<Uri>) {
+        if (!prepareGodotFilesForImport(uris)) {
+            return
+        }
+        filesForImportTask?.apply {
+            if (isNotEmpty()) {
+                val filesToImport = filesForImportTask?.toTypedArray() ?: arrayOf()
+                ProjectUnZipperAndImporter({ success: Boolean -> onImportProjectFinished(success) })
+                    .importAsync(filesToImport)
+            }
+        }
+    }
+
+    private fun prepareGodotFilesForImport(urisToImport: ArrayList<Uri>): Boolean {
+        for (uri in urisToImport) {
+            val projectDirectory = requireContext().let { DocumentFile.fromTreeUri(it, uri) }
+            val projectFile = projectDirectory?.findFile(Constants.GODOT_PROJECT_FILE_NAME)
+
+            if (projectFile == null || !projectFile.isFile) {
+                ToastUtil.showError(requireContext(), R.string.only_select_godot_projects)
+                continue
+            }
+            if (!projectDirectory.name?.let { copyGodotFileContentToCacheFile(uri, it) }!!) {
+                return false
+            }
+        }
+        return true
+    }
+
+    private fun copyGodotFileContentToCacheFile(uri: Uri, projectName: String): Boolean {
+        val folder = context?.let { DocumentFile.fromTreeUri(it, uri) } ?: return false
+        // TODO: take care of same sames as well
+        val projectDirectory = File(Constants.CACHE_DIRECTORY.path + "/" + projectName)
+        val projectFile = File(projectDirectory.path + "/" + Constants.GODOT_PROJECT_FILE_NAME)
+        filesForImportTask?.add(projectFile)
+        return copyProjectRecursively(folder, projectDirectory)
+    }
+
+    private fun copyProjectRecursively(sourceFolder: DocumentFile, destFolder: File): Boolean {
+        if (!destFolder.exists() && !destFolder.mkdirs()) {
+            return false
+        }
+
+        for (file in sourceFolder.listFiles()) {
+            val target = File(destFolder, file.name ?: continue)
+
+            if (file.isDirectory && !copyProjectRecursively(file, target)) return false
+            else if (file.isFile) {
+                try {
+                    requireContext().contentResolver.openInputStream(file.uri).use { input ->
+                        target.outputStream().use { output ->
+                            if (input != null) {
+                                copyStream(input, output)
+                            }
+                        }
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    return false
+                }
+            }
+        }
+        return true
+    }
+
+    private fun copyStream(input: InputStream, output: OutputStream) {
+        val buffer = ByteArray(4096)
+        var bytesRead: Int
+        while (input.read(buffer).also { bytesRead = it } != -1) {
+            output.write(buffer, 0, bytesRead)
+        }
+    }
+
     private fun getLocalProjectListAsync(callback: LoadProjectsListener) {
         coroutineScope.launch {
             val newItems: MutableList<ProjectData> = ArrayList()
@@ -583,16 +732,22 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
         @JvmStatic
         val TAG: String = ProjectListFragment::class.java.simpleName
         private const val PERMISSIONS_REQUEST_IMPORT_FROM_EXTERNAL_STORAGE = 801
-        private const val REQUEST_IMPORT_PROJECT = 7
 
         @JvmStatic
         fun getLocalProjectList(items: MutableList<ProjectData>) {
             FlavoredConstants.DEFAULT_ROOT_DIRECTORY.listFiles()?.forEach { projectDir ->
                 val xmlFile = File(projectDir, Constants.CODE_XML_FILE_NAME)
-                if (!xmlFile.exists()) {
+                val godotFile = File(projectDir, Constants.GODOT_PROJECT_FILE_NAME)
+
+                if (!xmlFile.exists() && !godotFile.exists()) {
                     return@forEach
                 }
-                val metaDataParser = ProjectMetaDataParser(xmlFile)
+
+                val metaDataParser = if (godotFile.exists()) {
+                    ProjectMetaDataParser(godotFile, ProjectType.GODOT)
+                } else {
+                    ProjectMetaDataParser(xmlFile, ProjectType.CATROBAT)
+                }
                 try {
                     items.add(metaDataParser.projectMetaData)
                 } catch (exception: IOException) {

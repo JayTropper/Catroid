@@ -30,6 +30,7 @@ import kotlinx.coroutines.withContext
 import org.catrobat.catroid.common.Constants
 import org.catrobat.catroid.common.Constants.CACHE_DIRECTORY
 import org.catrobat.catroid.common.FlavoredConstants
+import org.catrobat.catroid.common.ProjectType
 import org.catrobat.catroid.content.backwardcompatibility.ProjectMetaDataParser
 import org.catrobat.catroid.io.StorageOperations
 import org.catrobat.catroid.io.XstreamSerializer
@@ -53,12 +54,30 @@ class ProjectUnZipperAndImporter @JvmOverloads constructor(
             }
         }
     }
+
+    fun importAsync(files: Array<File>) {
+        scope.launch {
+            val success = importProjects(files)
+            withContext(Dispatchers.Main) {
+                onImportFinished(success)
+            }
+        }
+    }
 }
 
 fun unzipAndImportProjects(files: Array<File>): Boolean {
     var success = true
     files.forEach { projectDir ->
         success = success && unzipAndImportProject(projectDir)
+    }
+    return success
+}
+
+fun importProjects(files: Array<File>): Boolean {
+    var success = true
+    files.forEach { godotProjectFile ->
+        success = success && importGodotProject(godotProjectFile)
+
     }
     return success
 }
@@ -82,11 +101,39 @@ private fun getProjectName(projectDir: File): String? {
         return null
     }
     return try {
-        ProjectMetaDataParser(xmlFile).projectMetaData.name
+        ProjectMetaDataParser(xmlFile, ProjectType.CATROBAT).projectMetaData.name
     } catch (e: IOException) {
         Log.d(TAG, "Cannot extract projectName from xml", e)
         null
     }
+}
+
+private fun importGodotProject(godotProjectFile: File): Boolean {
+    val projectDirPath = godotProjectFile.path.replace(Regex("/project(_#\\d+)?\\.godot$"), "")
+    val projectDir = File(projectDirPath)
+    var projectName = getGodotProjectName(godotProjectFile) ?: return false
+    projectName = UniqueNameProvider().getUniqueName(projectName, FileMetaDataExtractor
+        .getProjectNames(FlavoredConstants.DEFAULT_ROOT_DIRECTORY))
+    val destinationDirectory = File(
+        FlavoredConstants.DEFAULT_ROOT_DIRECTORY,
+        FileMetaDataExtractor.encodeSpecialCharsForFileSystem(projectName))
+    return try {
+        StorageOperations.copyDir(projectDir, destinationDirectory)
+        true
+    } catch (e: IOException) {
+        Log.e(TAG, "Something went wrong while importing project ${godotProjectFile.name}", e)
+        errorWhileImporting(godotProjectFile, destinationDirectory)
+        false
+    }
+}
+
+private fun getGodotProjectName(godotProjectFile: File): String? {
+    for (line in godotProjectFile.readLines()) {
+        if (line.trim().startsWith("config/name=")) {
+            return line.substringAfter("config/name=").trim().removeSurrounding("\"")
+        }
+    }
+    return null
 }
 
 private fun importProject(projectDir: File): Boolean {

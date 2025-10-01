@@ -502,7 +502,7 @@
     <string formatted="false" name="notes_and_credits_title">หมายเหตุและเครดิต:</string>
     <string formatted="false" name="set_notes_and_credits">ตั้งค่าบันทึกและเครดิต</string>
     <string formatted="false" name="details_date_today">วันนี้</string>
-    <string formatted="false" name="import_project">นำเข้าโครงการ</string>
+    <string formatted="false" name="import_catrobat_project">นำเข้าโครงการ</string>
     <string formatted="false" name="export_project">บันทึกโครงการไปยังที่จัดเก็บข้อมูลภายนอก</string>
     <string formatted="false" name="error_import_project">เกิดข้อผิดพลาดขณะนำเข้าโครงการ</string>
     <string formatted="false" name="no_projects_selected">ไม่ได้เลือกโครงการสำหรับการนำเข้า</string>

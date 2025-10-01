@@ -693,7 +693,7 @@
     <string formatted="false" name="notes_and_credits_title">الملاحظات والائتمانات</string>
     <string formatted="false" name="set_notes_and_credits">تعيين الملاحظات والائتمان</string>
     <string formatted="false" name="details_date_today">اليوم</string>
-    <string formatted="false" name="import_project">استيراد مشروع</string>
+    <string formatted="false" name="import_catrobat_project">استيراد مشروع</string>
     <string formatted="false" name="export_project">حفظ المشروع على الذاكرة الخارجية</string>
     <string formatted="false" name="error_import_project">حدث خطأ أثناء استيراد المشاريع.</string>
     <string formatted="false" name="no_projects_selected">لم يتم تحديد مشاريع للاستيراد</string>

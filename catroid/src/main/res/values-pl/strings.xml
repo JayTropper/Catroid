@@ -608,7 +608,7 @@ Jeśli jednak nie chcesz tego robić, możesz skorzystać z naszych bezpłatnych
     <string formatted="false" name="notes_and_credits_title">Uwagi i podziękowania:</string>
     <string formatted="false" name="set_notes_and_credits">Ustaw uwagi i podziękowania</string>
     <string formatted="false" name="details_date_today">Dzisiaj</string>
-    <string formatted="false" name="import_project">Importuj projekt</string>
+    <string formatted="false" name="import_catrobat_project">Importuj projekt</string>
     <string formatted="false" name="export_project">Eksportuj projekt</string>
     <string formatted="false" name="error_import_project">Coś poszło nie tak podczas pobierania projektów.</string>
     <string formatted="false" name="no_projects_selected">Nie wybrano projektów do importu</string>

@@ -514,7 +514,7 @@
     <string formatted="false" name="notes_and_credits_title">Catatan dan kredit:</string>
     <string formatted="false" name="set_notes_and_credits">Atur catatan dan kredit</string>
     <string formatted="false" name="details_date_today">Hari ini</string>
-    <string formatted="false" name="import_project">Proyek impor</string>
+    <string formatted="false" name="import_catrobat_project">Proyek impor</string>
     <string formatted="false" name="export_project">Simpan proyek ke penyimpanan eksternal</string>
     <string formatted="false" name="error_import_project">Ada yang tidak beres saat mengimpor proyek.</string>
     <string formatted="false" name="no_projects_selected">Tidak ada proyek yang dipilih untuk diimpor</string>

@@ -550,7 +550,7 @@
     <string formatted="false" name="notes_and_credits_title">नोट्स और क्रेडिट:</string>
     <string formatted="false" name="set_notes_and_credits">नोट्स और क्रेडिट सेट करें</string>
     <string formatted="false" name="details_date_today">आज</string>
-    <string formatted="false" name="import_project">आयात परियोजना</string>
+    <string formatted="false" name="import_catrobat_project">आयात परियोजना</string>
     <string formatted="false" name="export_project">बाहरी संग्रहण के लिए प्रोजेक्ट सहेजें</string>
     <string formatted="false" name="error_import_project">प्रोजेक्ट आयात करते समय कुछ गलत हो गया।</string>
     <string formatted="false" name="no_projects_selected">आयात के लिए कोई प्रोजेक्ट नहीं चुना गया</string>

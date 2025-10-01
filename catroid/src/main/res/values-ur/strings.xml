@@ -530,7 +530,7 @@
     <string formatted="false" name="notes_and_credits_title">نوٹس اور کریڈٹ:</string>
     <string formatted="false" name="set_notes_and_credits">نوٹ اور کریڈٹ مقرر کریں</string>
     <string formatted="false" name="details_date_today">آج</string>
-    <string formatted="false" name="import_project">پروجیکٹ درآمد کریں</string>
+    <string formatted="false" name="import_catrobat_project">پروجیکٹ درآمد کریں</string>
     <string formatted="false" name="export_project">پراجیکٹ کے لیے بیرونی ذخیرہ محفوظ کریں</string>
     <string formatted="false" name="error_import_project">پروجیکٹ کو درآمد کرتے وقت کچھ غلط ہو گیا.</string>
     <string formatted="false" name="no_projects_selected">درآمد کے لیے کوئی پروجیکٹ منتخب نہیں کیا گیا۔</string>

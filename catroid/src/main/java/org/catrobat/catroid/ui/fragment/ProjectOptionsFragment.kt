@@ -48,6 +48,7 @@ import org.catrobat.catroid.R
 import org.catrobat.catroid.common.Constants
 import org.catrobat.catroid.common.Nameable
 import org.catrobat.catroid.common.ProjectData
+import org.catrobat.catroid.common.ProjectType
 import org.catrobat.catroid.common.ScreenModes
 import org.catrobat.catroid.content.Project
 import org.catrobat.catroid.databinding.FragmentProjectOptionsBinding
@@ -197,7 +198,8 @@ class ProjectOptionsFragment : Fragment() {
             project!!.name,
             project!!.directory,
             project!!.catrobatLanguageVersion,
-            project!!.hasScene()
+            project!!.hasScene(),
+            ProjectType.CATROBAT
         )
         AlertDialog.Builder(requireContext())
             .setTitle(resources.getQuantityString(R.plurals.delete_projects, 1))
@@ -378,7 +380,8 @@ class ProjectOptionsFragment : Fragment() {
                 it.name,
                 it.directory,
                 it.catrobatLanguageVersion,
-                it.hasScene()
+                it.hasScene(),
+                ProjectType.CATROBAT
             )
             args.putSerializable(ProjectDetailsFragment.SELECTED_PROJECT_KEY, projectData)
         }

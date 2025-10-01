@@ -510,7 +510,7 @@
     <string formatted="false" name="notes_and_credits_title">ノートとクレジット:</string>
     <string formatted="false" name="set_notes_and_credits">メモとクレジットを設定</string>
     <string formatted="false" name="details_date_today">今日</string>
-    <string formatted="false" name="import_project">プロジェクトをインポート</string>
+    <string formatted="false" name="import_catrobat_project">プロジェクトをインポート</string>
     <string formatted="false" name="export_project">プロジェクトを外部ストレージに保存</string>
     <string formatted="false" name="error_import_project">プロジェクトのインポート中に問題が発生しました。</string>
     <string formatted="false" name="no_projects_selected">インポート用に選択されたプロジェクトはありません</string>

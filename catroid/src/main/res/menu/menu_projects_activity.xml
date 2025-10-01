@@ -27,10 +27,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/import_project"
+        android:id="@+id/import_catrobat_project"
         android:title="@string/import_project"
         app:showAsAction="never"
         android:icon="@drawable/ic_import_project"/>
+    <item
+        android:id="@+id/import_godot_project"
+        android:title="@string/import_project"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_godot"/>
     <item
         android:id="@+id/copy"
         android:title="@string/copy"

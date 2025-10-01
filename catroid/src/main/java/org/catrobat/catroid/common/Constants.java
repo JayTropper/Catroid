@@ -54,6 +54,7 @@ public final class Constants {
 	public static final int APPLICATION_BUILD_NUMBER = 0; // updated from jenkins nightly/release build
 	public static final String APPLICATION_BUILD_NAME = ""; // updated from jenkins nightly/release build
 	public static final String CODE_XML_FILE_NAME = "code.xml";
+	public static final String GODOT_PROJECT_FILE_NAME = "project.godot";
 	public static final String PERMISSIONS_FILE_NAME = "permissions.txt";
 	public static final String TMP_CODE_XML_FILE_NAME = "tmp_" + CODE_XML_FILE_NAME;
 	public static final String UNDO_CODE_XML_FILE_NAME = "undo_" + CODE_XML_FILE_NAME;
@@ -74,6 +75,7 @@ public final class Constants {
 	public static final String EMBROIDERY_FILE_EXTENSION = ".dst";
 	public static final String SVG_FILE_EXTENSION = ".svg";
 	public static final String TEXT_FILE_EXTENSION = ".txt";
+	public static final String GODOT_EXTENSION = ".godot";
 	public static final char REMIX_URL_PREFIX_INDICATOR = '[';
 	public static final char REMIX_URL_SUFIX_INDICATOR = ']';
 	public static final char REMIX_URL_SEPARATOR = ',';

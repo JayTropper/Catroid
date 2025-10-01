@@ -582,7 +582,7 @@
     <string formatted="false" name="notes_and_credits_title">Notes and credits:</string>
     <string formatted="false" name="set_notes_and_credits">Set notes and credits</string>
     <string formatted="false" name="details_date_today">Danas</string>
-    <string formatted="false" name="import_project">Uvezite projekat</string>
+    <string formatted="false" name="import_catrobat_project">Uvezite projekat</string>
     <string formatted="false" name="export_project">Spremite projekat na vanjsku memoriju</string>
     <string formatted="false" name="error_import_project">Nešto je pošlo po zlu pri uvoženju projekata.</string>
     <string formatted="false" name="no_projects_selected">No projects selected for import</string>

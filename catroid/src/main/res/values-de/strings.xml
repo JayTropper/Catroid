@@ -541,7 +541,7 @@
     <string formatted="false" name="notes_and_credits_title">Anmerkungen und Credits:</string>
     <string formatted="false" name="set_notes_and_credits">Anmerkungen und Credits setzen</string>
     <string formatted="false" name="details_date_today">Heute</string>
-    <string formatted="false" name="import_project">Projekte importieren</string>
+    <string formatted="false" name="import_catrobat_project">Projekte importieren</string>
     <string formatted="false" name="export_project">Projekt im externen Speicher speichern</string>
     <string formatted="false" name="error_import_project">Beim Importieren von Projekten ist etwas schief gelaufen.</string>
     <string formatted="false" name="no_projects_selected">Keine Projekte für den Import ausgewählt</string>

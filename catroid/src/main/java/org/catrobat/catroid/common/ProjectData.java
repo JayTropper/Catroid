@@ -34,16 +34,19 @@ public class ProjectData implements Nameable, Serializable, Comparable<ProjectDa
 
 	private static final long serialVersionUID = 1L;
 
-	private String name;
-	private File directory;
-	private double languageVersion;
-	private boolean hasScenes;
+	private final String name;
+	private final File directory;
+	private final double languageVersion;
+	private final boolean hasScenes;
+	private final ProjectType projectType;
 
-	public ProjectData(String name, File directory, double languageVersion, boolean hasScenes) {
+	public ProjectData(String name, File directory, double languageVersion, boolean hasScenes,
+			ProjectType projectType) {
 		this.name = name;
 		this.directory = directory;
 		this.languageVersion = languageVersion;
 		this.hasScenes = hasScenes;
+		this.projectType = projectType;
 	}
 
 	public String getName() {
@@ -68,6 +71,10 @@ public class ProjectData implements Nameable, Serializable, Comparable<ProjectDa
 
 	public File getDirectory() {
 		return new File(DEFAULT_ROOT_DIRECTORY, FileMetaDataExtractor.encodeSpecialCharsForFileSystem(getName()));
+	}
+
+	public ProjectType getProjectType() {
+		return projectType;
 	}
 
 	@Override

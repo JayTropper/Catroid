@@ -505,7 +505,7 @@
     <string formatted="false" name="notes_and_credits_title">说明和版权信息:</string>
     <string formatted="false" name="set_notes_and_credits">设置说明和版权信息</string>
     <string formatted="false" name="details_date_today">今天</string>
-    <string formatted="false" name="import_project">导入项目</string>
+    <string formatted="false" name="import_catrobat_project">导入项目</string>
     <string formatted="false" name="export_project">保存项目到外部存储</string>
     <string formatted="false" name="error_import_project">获取项目时出错。</string>
     <string formatted="false" name="no_projects_selected">没有选择进口的项目</string>

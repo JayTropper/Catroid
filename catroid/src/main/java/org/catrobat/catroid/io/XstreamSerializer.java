@@ -36,6 +36,7 @@ import org.catrobat.catroid.ProjectManager;
 import org.catrobat.catroid.common.LookData;
 import org.catrobat.catroid.common.NfcTagData;
 import org.catrobat.catroid.common.ProjectData;
+import org.catrobat.catroid.common.ProjectType;
 import org.catrobat.catroid.common.SoundInfo;
 import org.catrobat.catroid.content.BroadcastScript;
 import org.catrobat.catroid.content.EmptyScript;
@@ -656,7 +657,7 @@ public final class XstreamSerializer {
 			loadSaveLock.lock();
 
 			Project project;
-			ProjectData projectMetaData = new ProjectMetaDataParser(xmlFile).getProjectMetaData();
+			ProjectData projectMetaData = new ProjectMetaDataParser(xmlFile, ProjectType.CATROBAT).getProjectMetaData();
 
 			if (!projectMetaData.hasScenes()) {
 				new File(projectDir, IMAGE_DIRECTORY_NAME).mkdir();

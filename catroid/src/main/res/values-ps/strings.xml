@@ -549,7 +549,7 @@
     <string formatted="false" name="notes_and_credits_title">یادښتونه او کریډیټ:</string>
     <string formatted="false" name="set_notes_and_credits">نوټونه او کریډیټ تنظیم کړئ</string>
     <string formatted="false" name="details_date_today">نن</string>
-    <string formatted="false" name="import_project">د وارداتو پروژه</string>
+    <string formatted="false" name="import_catrobat_project">د وارداتو پروژه</string>
     <string formatted="false" name="export_project">د صادراتو پروژه</string>
     <string formatted="false" name="error_import_project">د پروژو د واردولو پر مهال یو څه غلط شول.</string>
     <string formatted="false" name="no_projects_selected">د وارداتو لپاره کومه پروژه نه ده غوره شوې</string>

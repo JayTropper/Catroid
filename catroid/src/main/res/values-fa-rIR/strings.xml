@@ -536,7 +536,7 @@
     <string formatted="false" name="notes_and_credits_title">یادداشت ها و اعتبارات:</string>
     <string formatted="false" name="set_notes_and_credits">یادداشت ها و اعتبارات را تنظیم کنید</string>
     <string formatted="false" name="details_date_today">امروز</string>
-    <string formatted="false" name="import_project">واردات پروژه</string>
+    <string formatted="false" name="import_catrobat_project">واردات پروژه</string>
     <string formatted="false" name="export_project">ذخیره پروژه در حافظه خارجی</string>
     <string formatted="false" name="error_import_project">هنگام وارد کردن پروژه ها مشکلی پیش آمد.</string>
     <string formatted="false" name="no_projects_selected">هیچ پروژه ای برای وارد کردن انتخاب نشده است</string>

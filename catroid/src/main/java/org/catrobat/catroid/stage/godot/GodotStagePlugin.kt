@@ -23,6 +23,7 @@
 
 package org.catrobat.catroid.stage.godot
 
+import android.util.Log
 import org.godotengine.godot.Godot
 import org.godotengine.godot.plugin.GodotPlugin
 import org.godotengine.godot.plugin.SignalInfo
@@ -34,16 +35,40 @@ import org.godotengine.godot.plugin.SignalInfo
 class GodotStagePlugin(godot: Godot) : GodotPlugin(godot) {
 
     companion object {
-        val SIGNALS: MutableSet<SignalInfo> = mutableSetOf(SignalInfo("default", String::class.java))
+        val LOAD_PROJECT = SignalInfo("load_project", String::class.java)
     }
+
+    private val signals: MutableList<SignalInfo> = mutableListOf()
 
     override fun getPluginName() = "AppPlugin"
 
     override fun getPluginSignals(): Set<SignalInfo> {
-        return SIGNALS
+        return signals.toSet()
     }
 
+    fun addSignal(name: String, vararg argTypes: Class<*>) {
+        signals.add(SignalInfo(name, *argTypes))
+    }
+
+    /**
+     * This method triggers the desired signal identified by signalName with the passed
+     * arguments in the executed Godot project. If the signal is not in the signals list,
+     * it is added to it.
+     */
     fun emitGodotSignal(signalName: String, signalArgs: Any) {
+        if (signals.none { it.name == signalName}) {
+            Log.e(GodotStagePlugin::class.simpleName, "The signal cannot be emitted since it was " +
+                "never added to the signal list. Please add your signal using the " +
+                "GodotStagePlugin::addSignal() method first.")
+            return
+        }
         emitSignal(signalName, signalArgs)
+    }
+
+    /**
+     * Example method to demonstrate how a static signal could be applied
+     */
+    fun loadGodotProject(pathToProject: String) {
+        emitSignal(LOAD_PROJECT.name, pathToProject)
     }
 }

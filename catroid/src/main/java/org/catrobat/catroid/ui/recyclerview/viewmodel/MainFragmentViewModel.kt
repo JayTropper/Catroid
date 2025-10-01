@@ -42,6 +42,7 @@ import kotlinx.coroutines.withContext
 import org.catrobat.catroid.common.Constants
 import org.catrobat.catroid.common.FlavoredConstants
 import org.catrobat.catroid.common.ProjectData
+import org.catrobat.catroid.common.ProjectType
 import org.catrobat.catroid.content.backwardcompatibility.ProjectMetaDataParser
 import org.catrobat.catroid.sync.FeaturedProjectSyncWorker
 import org.catrobat.catroid.sync.ProjectsCategoriesSyncWorker
@@ -80,7 +81,7 @@ class MainFragmentViewModel(
         FlavoredConstants.DEFAULT_ROOT_DIRECTORY.listFiles()?.forEach { projectDir ->
             val xmlFile = File(projectDir, Constants.CODE_XML_FILE_NAME)
             if (xmlFile.exists()) {
-                val metaDataParser = ProjectMetaDataParser(xmlFile)
+                val metaDataParser = ProjectMetaDataParser(xmlFile, ProjectType.CATROBAT)
                 try {
                     myProjects.add(metaDataParser.projectMetaData)
                 } catch (e: IOException) {

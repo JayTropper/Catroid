@@ -253,7 +253,7 @@
             android:name=".ui.filepicker.FilePickerActivity" />
 
         <activity
-            android:name=".stage.godot.GodotStageActivity" />
+            android:name=".stage.godot.RunGodotGameActivity" />
 
         <service
             android:name=".transfers.project.ProjectUploadService"

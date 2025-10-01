@@ -509,7 +509,7 @@
     <string formatted="false" name="notes_and_credits_title">Notes and credits:</string>
     <string formatted="false" name="set_notes_and_credits">Set notes and credits</string>
     <string formatted="false" name="details_date_today">Данас</string>
-    <string formatted="false" name="import_project">Убаци пројекат</string>
+    <string formatted="false" name="import_catrobat_project">Убаци пројекат</string>
     <string formatted="false" name="error_import_project">Настала грешка при убацивању пројеката.</string>
     <string formatted="false" name="error_no_files_found">Ниједна пројекат датотека није пронађена.</string>
     <!-- ScriptListFragment -->

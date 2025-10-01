@@ -26,6 +26,7 @@ import android.content.Context;
 import android.text.format.Formatter;
 import android.util.Log;
 
+import org.catrobat.catroid.common.ProjectType;
 import org.catrobat.catroid.content.backwardcompatibility.ProjectMetaDataParser;
 
 import java.io.File;
@@ -33,8 +34,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 import static org.catrobat.catroid.common.Constants.CODE_XML_FILE_NAME;
+import static org.catrobat.catroid.common.Constants.GODOT_PROJECT_FILE_NAME;
 
 public final class FileMetaDataExtractor {
 
@@ -76,13 +79,16 @@ public final class FileMetaDataExtractor {
 
 		List<String> projectNames = new ArrayList<>();
 
-		for (File file : directory.listFiles()) {
+		for (File file : Objects.requireNonNull(directory.listFiles())) {
 			File xmlFile = new File(file, CODE_XML_FILE_NAME);
-			if (!xmlFile.exists()) {
+			File godotFile = new File(file, GODOT_PROJECT_FILE_NAME);
+			if (!xmlFile.exists() && !godotFile.exists()) {
 				continue;
 			}
 
-			ProjectMetaDataParser metaDataParser = new ProjectMetaDataParser(xmlFile);
+			ProjectMetaDataParser metaDataParser = xmlFile.exists() ?
+					new ProjectMetaDataParser(xmlFile, ProjectType.CATROBAT) :
+					new ProjectMetaDataParser(godotFile, ProjectType.GODOT);
 
 			try {
 				projectNames.add(metaDataParser.getProjectMetaData().getName());

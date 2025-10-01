@@ -529,7 +529,7 @@
     <string formatted="false" name="notes_and_credits_title">Ескертулер мен несиелер:</string>
     <string formatted="false" name="set_notes_and_credits">Ескертулер мен несиелер орнату:</string>
     <string formatted="false" name="details_date_today">Бүгін</string>
-    <string formatted="false" name="import_project">Жобаны импорттау</string>
+    <string formatted="false" name="import_catrobat_project">Жобаны импорттау</string>
     <string formatted="false" name="export_project">Экспорттық жоба</string>
     <string formatted="false" name="error_import_project">Жобаларды импорттау кезінде қате пайда болды.</string>
     <string formatted="false" name="no_projects_selected">Импортталатын жобалар таңдалмаған</string>
