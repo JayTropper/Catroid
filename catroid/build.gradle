@@ -36,6 +36,11 @@ buildscript {
 plugins {
     id "io.gitlab.arturbosch.detekt" version "1.23.0"
     id 'checkstyle'
+    /**
+     * executable with "./gradlew dependencyUpdates" to check for any library upgrades in the
+     * whole project
+     */
+    id "com.github.ben-manes.versions" version "0.51.0"
 }
 
 repositories {

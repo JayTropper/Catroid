@@ -257,14 +257,11 @@ class ProjectListFragment : RecyclerViewFragment<ProjectData?>(), ProjectLoadLis
         val godotActivity = RunGodotGameActivity()
         val path = godotDirectory.path
 
-        if (godotDirectory.exists()) {
-            Log.d(TAG, "Printing all files of the Godot project.")
-            godotDirectory.listFiles()?.forEach { file -> {
-                Log.e(TAG, file.name)
-            } }
-        } else {
+        if (!godotDirectory.exists()) {
             Log.d(TAG, "The passed Godot directory does not exist.")
+            return
         }
+
         this.context?.let {
             godotActivity.onNewGodotInstanceRequested(it, args = arrayOf("--path", path))
         }
